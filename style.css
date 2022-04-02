@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+body {
+    margin: 0;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+.card {
+    /* flex-basis: 32%; */
+    flex-grow: 1;
+    box-shadow: 0px 7px 10px 0px #00000066, 0 -3px 9px 0px #00000066;
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card h4 {
+    margin-bottom: 0;
+}
+
+.car-image {
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+}
+
+.car-image-1 {
+    background-image: url('pics/img1.jpg');
+}
+
+.car-image-2 {
+    background-image: url('pics/img2.jpg');
+}
+
+.car-image-3 {
+    background-image: url('pics/img3.jpg');
+}
+
+@media screen and (max-width: 600px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .car-image {
+        height: 25vh;
+    }
+}

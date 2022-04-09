@@ -16,34 +16,70 @@ body {
 
 .cards {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 16px;
     justify-content: space-between;
 }
 
 .card {
-    /* flex-basis: 32%; */
-    flex-grow: 1;
+    flex-basis: 31%;
+    /* flex-grow: 1; */
     box-shadow: 0px 7px 10px 0px #00000066, 0 -3px 9px 0px #00000066;
     border-radius: 6px;
     padding: 1rem;
 }
 
-.card img {
+.car-img {
+    height: 100px;
     width: 100%;
+    object-fit: cover;
 }
 
 .card h4 {
     margin-bottom: 0;
 }
 
-.car-image {
+
+.btn {
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 6px 10px;
+    transition: background-color .3s, box-shadow .1s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: rgb(49 125 224);
+    color: white;
+    border: 1px solid rgb(27, 95, 183);
+}
+
+.btn-primary:hover {
+    background-color: rgb(20, 91, 185);
+}
+
+.btn-primary:active {
+    box-shadow: 4px 4px 0px 0 black;
+}
+
+@media screen and (max-width: 600px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .car-image, .car-img {
+        height: 25vh;
+    }
+}
+
+/* .car-image {
     height: 100px;
     background-size: cover;
     background-position: center;
-}
+} */
 
-.car-image-1 {
+/* .car-image-1 {
     background-image: url('pics/img1.jpg');
 }
 
@@ -53,14 +89,4 @@ body {
 
 .car-image-3 {
     background-image: url('pics/img3.jpg');
-}
-
-@media screen and (max-width: 600px) {
-    .cards {
-        flex-direction: column;
-    }
-
-    .car-image {
-        height: 25vh;
-    }
-}
+} */

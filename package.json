@@ -1,0 +1,23 @@
+{
+  "name": "first-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "json-server --watch db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex-dmit/first-app-ov6.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alex-dmit/first-app-ov6/issues"
+  },
+  "homepage": "https://github.com/alex-dmit/first-app-ov6#readme",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}

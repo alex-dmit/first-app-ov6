@@ -1,0 +1,7 @@
+{
+    "id": 1,
+    "name": "John",
+    "props": true,
+    "address": null,
+    "phones": ["3242423", "324234432"]
+}

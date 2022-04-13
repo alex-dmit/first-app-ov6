@@ -15,13 +15,22 @@ function initPage(cars = []) {
     })
 }
 
-fetch('http://localhost:3000/cars').then((response) => {
+// fetch('http://localhost:3000/cars').then((response) => {
+//     if (response.ok) {
+//         return response.json()
+//     }
+// }).then((cars) => {
+//     initPage(cars)
+// })
+
+async function getCars() {
+    const response = await fetch('http://localhost:3000/cars')
     if (response.ok) {
-        return response.json()
+        const cars = await response.json()
+        initPage(cars)
     }
-}).then((cars) => {
-    initPage(cars)
-})
+}
+getCars()
 
 function renderCart() {    
     const orderPriceElem = document.getElementById('order-price')
@@ -97,3 +106,60 @@ function renderCart() {
 // thirdCar.addEventListener('click', function () {
 //     console.log('Third car')
 // })
+
+
+
+// callback hell
+// const callback = () => {
+//     console.log('Message 1')
+//     setTimeout(() => {
+//         console.log('Message 2')
+//         setTimeout(() => {
+//             console.log('Message 3')
+//             setTimeout(() => {
+//                 console.log('Message 4')
+//             }, 1000)
+//         }, 1000)
+//     }, 1000)
+// }
+// setTimeout(callback, 1000)
+
+// es6 es2015, promise
+// function delay(message) {
+//     return new Promise((resolve, reject) => {
+//        setTimeout(() => {
+//            console.log(message)
+//            resolve()
+//        }, 1000)
+//    })
+// }
+
+// promise hell
+// delay('Message 1').then(() => {
+//     console.log('First then')
+//     return delay('Message 2')
+// }).then(() => {
+//     console.log('Second then')
+//     return delay('Message 3')
+// }).then(() => {
+//     return fetch('http://localhost:3000/cars/1')
+// }).then((response) => {
+//     return response.json()
+// }).then((car) => {
+//     console.log(car.name)
+// })
+
+// async/await es2017
+// async function asyncExample() {
+//     await delay('Message 1')
+//     await delay('Message 2')
+//     const response = await fetch('http://localhost:3000/cars/1')
+//     const car = await response.json()
+//     console.log(car.name)
+//     await delay('Message 3')
+//     const response2 = await fetch('http://localhost:3000/cars/2')
+//     const car2 = await response2.json()
+//     console.log(car2.name)
+    
+// }
+// asyncExample()
